@@ -1,0 +1,84 @@
+<a  routerLink="../" class="button-29">Go back</a> <br />
+<div class="container" *ngIf="product">
+  <div class="row">
+    <div class="col-lg-4 col-md-6 col-sm-12 mainbox">
+      <div class="d-flex flex-lg-row flex-column"> <!-- Flex layout for desktop and smaller screens -->
+        <div class="images">
+          <img [src]="product.image" alt="Main Photo" class="main-img" />
+        </div>
+        <div class="ms-4 information">
+          <h3>{{ product.title | titlecase }}</h3>
+          <p>{{ product.description }}</p>
+          <div class="rate_box d-flex">
+            <span>{{ product.price | currency }}</span>
+            
+          </div>
+          <form action="" [formGroup]="cart">
+            <div class="row mb-4">
+              <div class="mb-3">
+                <label class="mb-2 d-block">Quantity</label>
+                <div class="input-group mb-3" style="width: 170px">
+                  <button
+                    class="btn btn-white border border-secondary px-3"
+                    type="button"
+                    (click)="changeOrderNumber('-')"
+                  >
+                    <i class="bi bi-dash"></i>
+                  </button>
+                  <input
+                    type="text"
+                    class="form-control text-center border border-secondary"
+                    placeholder="1"
+                    aria-describedby="button-addon1"
+                    formControlName="amount"
+                  />
+                  <button
+                    class="btn btn-white border border-secondary px-3"
+                    type="button"
+                    data-mdb-ripple-color="dark"
+                    (click)="changeOrderNumber('+')"
+                  >
+                    <i class="bi bi-plus"></i>
+                  </button>
+                </div>
+                <div
+                class="alert alert-danger"
+                 *ngIf="
+                cart.controls['amount'].invalid &&
+                (cart.controls['amount'].touched ||
+                  cart.controls['amount'].dirty)
+               " >
+          
+                </div>
+                <p
+                  clas="text-danger"
+                  style="color: red"
+                  *ngIf="cart.controls['amount'].errors && cart.controls['amount'].errors['max']"
+                >
+                  You are only able to choose 5 products at one time.
+                </p>
+              </div>
+            </div>
+            
+            <div class="forButtons col-lg-4 col-md-6 col-sm-12">
+              <a href="#" class="btn btn-warning shadow-0 buyBtn"> Buy now </a>
+              <button class="btn btn-danger btn btn-primary shadow-0 ms-2 " (click)="addToCart()" >Add to cart </button>
+              
+               <a
+                 href="#"
+                 class="btn btn-light border border-secondary icon-hover ms-2"
+               >
+                 <i class="bi bi-suit-heart-fill"></i> Save
+               </a>
+  
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<hr>
+

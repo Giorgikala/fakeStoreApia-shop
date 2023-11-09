@@ -1,0 +1,33 @@
+<div class="card p-3" *ngIf="product">
+  <div class="cover mt-2">
+    <img [src]="product.image" class="card-img-top book-img" alt="..." />
+  </div>
+  <div class="card-body">
+    <div class="d-flex justify-content-between mb-2 align-items-center">
+      <div class="title">
+        <h6>{{ product.category | uppercase }}</h6>
+        <h6 class="card-title">{{ product.title | titlecase | truncate: 4 }}</h6>
+      </div>
+     
+    </div>
+    <div>
+      
+      <div>
+        <!-- <input type="text" placeholder="Update description" [formControl]="formControlName">
+        <button (click)="submit()">Submit</button> -->
+      </div>
+      <!-- <span class="badge border rounded-pill" 
+            [ngClass]="product.stock > 5 ? 
+            'bg-success-subtle border border-success-subtle text-success-emphasis' : 
+            'bg-warning-subtle border-warning-subtle text-warning-emphasis'">
+        {{ product.stock > 5 ? "In Stock" : "Few Items Left" }}
+      </span> -->
+    </div>
+    <div class="d-flex justify-content-between  ">
+      <a class="  viewBtn" (click)="productClicked.emit('VISIT')">View </a>
+      <!-- <button class="btn btn-danger" (click)="productClicked.emit('DELETE')">Delete </button> -->
+     
+
+    </div>
+  </div>
+</div>

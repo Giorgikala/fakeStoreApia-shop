@@ -1,0 +1,24 @@
+<form [formGroup]="productForm" >
+  <label for="title">Title:</label>
+  <input type="text" id="title" formControlName="title" class="form-control">
+  
+  <label for="">id</label>
+  <input type="text" formControlName="id" class="form-control">
+
+  <label for="">quantity</label>
+  <input type="text" formControlName="quantity" class="form-control">
+
+  <label for="description">Description:</label>
+  <textarea id="description" formControlName="description"class="form-control" ></textarea>
+
+  <label for="price">Price:</label>
+  <input type="number" id="price" formControlName="price" class="form-control" >
+
+  <label for="category">Category:</label>
+  <input type="text" id="category" formControlName="category" class="form-control">
+
+  <label for="image">Image URL:</label>
+  <input type="text" id="image" formControlName="image" class="form-control">
+
+  <button  class="btn btn-info my-3" type="submit" (click)="onSubmit()">Add Product</button>
+</form>

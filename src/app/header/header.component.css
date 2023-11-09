@@ -1,0 +1,33 @@
+header {
+    border-bottom: 1px solid #ccc;
+}
+/* button {
+    position: absolute;
+    right: 20px;
+
+} */
+.active{
+    background-color: rgb(174, 174, 202);
+    color: white;
+    border-radius: 15px;
+}
+.auth {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    right: 20px;
+    width: 253px;
+
+}
+
+.ulitems{
+    width: 100%;
+    justify-content: space-around;
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+}
+.forButtons{
+    display: flex;
+    gap: 10px;
+}

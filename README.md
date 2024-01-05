@@ -1,4 +1,9 @@
 # Fnproject
+ username: mor_2314
+ password: 83r5^_
+
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.5.
 
